@@ -30,11 +30,18 @@ docker ps
 docker  stop  mysql-demo 
 docker  rm  mysql-demo  
 ```
-## mount
+## volume
 
 ```
 docker run  -d  -p 13306:3306 --name  mysql-demo -v h:/DockerData/company:/var/lib/mysql  -e MYSQL_ROOT_PASSWORD=123123123 mysql-demo
 ```
+
+## debug 
+
+```
+docker run  --entrypoint /bin/bash    -p 13306:3306 --name  mysql-demo -v h:/DockerData/company:/var/lib/mysql  -e MYSQL_ROOT_PASSWORD=123123123 mysql-demo -s
+```
+
 
 ## custom 
 
